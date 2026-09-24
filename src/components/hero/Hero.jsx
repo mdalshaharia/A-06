@@ -4,7 +4,8 @@ import heroImg from '../../assests/banner.png'
 
 const Hero = () => {
     return (
-    <section className="rounded-3xl bg-[#15171D] px-8 py-14 md:px-16 md:py-20 mx-10 my-20">
+    <section className='container mx-auto'>
+        <div className="rounded-3xl bg-[#15171D] px-8 py-14 md:px-16 md:py-20 mx-10 my-20">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Copy */}
         <div className="flex-1 max-w-xl">
@@ -37,6 +38,7 @@ const Hero = () => {
           />
         </div>
       </div>
+    </div>
     </section>
   );
 }

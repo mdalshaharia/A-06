@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="flex-1">
         <Link href="/" className="flex items-center gap-2">
           <Image src={logo} alt="FITLOG" width={30} height={30} />
-          <span className="text-lg font-bold tracking-wide text-white">FITLOG</span>
+          <span className="text-lg font-bold tracking-wide text-white font-oswald">FITLOG</span>
         </Link>
       </div>
 

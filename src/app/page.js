@@ -1,4 +1,5 @@
 import Hero from "@/components/hero/Hero";
+import Library from "@/components/library/Library";
 import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className=" ">
       <Navbar></Navbar>
       <Hero></Hero>
+      <Library></Library>
     </div>
   );
 }
