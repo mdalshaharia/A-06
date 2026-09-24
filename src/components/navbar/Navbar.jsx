@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Dumbbell } from "lucide-react";
 import Image from "next/image";
 import logo from '../../assests/logo.png'
+import { useContext } from "react";
+import { WorkOutContext } from "@/context/WorkOutContext";
 
 const navLinks = [
   { label: "Workouts", href: "/" },
@@ -13,6 +15,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const {plan, saved} = useContext(WorkOutContext)
 
   return (
     <div className="navbar border-b px-6 text-white container mx-auto">
@@ -50,12 +53,16 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium">Plan</span>
           <span className="badge bg-[#C2F800] badge-sm font-semibold text-black">
-            0
+            {plan ? plan.length : 0}
           </span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-sm">Saved</span>
-          <span className="badge badge-sm font-semibold border border-gray-300">0</span>
+          <span className="badge badge-sm font-semibold border border-gray-300">
+            {
+                saved? saved.length : 0
+            }
+          </span>
         </div>
       </div>
     </div>

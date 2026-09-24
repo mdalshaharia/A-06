@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono, Oswald, Inter } from "next/font/google";
 import "./globals.css";
+import WorkOutProvider from "@/context/WorkOutContext";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +34,13 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <WorkOutProvider>
+        {children}
+        <ToastContainer />
+        </WorkOutProvider>
+        
+        </body>
     </html>
   );
 }

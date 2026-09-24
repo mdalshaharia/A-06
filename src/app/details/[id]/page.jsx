@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
-import { CalendarPlus, Bookmark } from "lucide-react";
+import PlanBtn from '@/components/buttons/PlanBtn';
+import SaveBtn from '@/components/buttons/SaveBtn';
 
 const page = async({params}) => {
   const { id } = await params;
@@ -78,14 +79,8 @@ const info = [
             </ol>
           </div>
           <div className="flex gap-3 mt-5 font-inter">
-            <button className="inline-flex items-center gap-2 bg-[#CCFF00] text-black font-semibold text-sm rounded-lg px-4 py-2.5 ">
-              <CalendarPlus size={16} />
-              Add to today&apos;s plan
-            </button>
-            <button className="inline-flex items-center gap-2 border border-white/15 hover:bg-white/5 text-white text-sm rounded-lg px-4 py-2.5">
-              <Bookmark size={16} />
-              Save for later
-            </button>
+            <PlanBtn currentPlan={data}></PlanBtn>
+            <SaveBtn currentPlan={data} ></SaveBtn>
           </div>
         </div>
       </div>
