@@ -18,12 +18,12 @@ export default function Navbar() {
   const {plan, saved} = useContext(WorkOutContext)
 
   return (
-    <div className="navbar border-b px-6 text-white container mx-auto">
-      {/* Logo */}
+    <section className="border-b-2 container mx-auto">
+      <div className="navbar px-6 text-white  py-2">
       <div className="flex-1">
         <Link href="/" className="flex items-center gap-2">
           <Image src={logo} alt="FITLOG" width={30} height={30} />
-          <span className="text-lg font-bold tracking-wide text-white font-oswald">FITLOG</span>
+          <span className="text-lg font-bold ml-1 text-white font-oswald">FITLOG</span>
         </Link>
       </div>
 
@@ -36,9 +36,9 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={
-                    isActive
-                      ? "btn btn-outline rounded-full bg-[#27341b] text-[#C2F800] border border-gray-600 "
-                      : "btn btn-outline rounded-full  text-gray-400 hover:bg-[#333a2d]"
+                    ` text-xs px-3 py-1 font-inter ${isActive
+                      ? " rounded-full bg-[#27341b] text-[#C2F800] border border-gray-600 "
+                      : " rounded-full  text-gray-400"}`
                   }
                 >
                   {link.label}
@@ -50,15 +50,15 @@ export default function Navbar() {
       </div>
 
       <div className="flex-1 flex justify-end items-center gap-6">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">Plan</span>
-          <span className="badge bg-[#C2F800] badge-sm font-semibold text-black">
+        <div className="flex items-center gap-2 font-inter">
+          <span className="text-xs font-medium text-gray-400">Plan</span>
+          <span className="w-5 h-5 flex items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black text-xs">
             {plan ? plan.length : 0}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-sm">Saved</span>
-          <span className="badge badge-sm font-semibold border border-gray-300">
+          <span className="text-xs font-medium text-gray-400">Saved</span>
+          <span className="w-5 h-5 flex items-center justify-center rounded-full text-xs font-semibold border border-gray-500">
             {
                 saved? saved.length : 0
             }
@@ -66,5 +66,6 @@ export default function Navbar() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
