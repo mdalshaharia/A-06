@@ -10,7 +10,7 @@ import { WorkOutContext } from "@/context/WorkOutContext";
 
 const navLinks = [
   { label: "Workouts", href: "/" },
-  { label: "My Plan", href: "/plan" },
+  { label: "My Plan", href: "/my-plan" },
 ];
 
 export default function Navbar() {
