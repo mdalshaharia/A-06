@@ -21,8 +21,8 @@ export default function Navbar() {
       <div className="navbar px-6 text-white  py-2">
       <div className="flex-1">
         <Link href="/" className="flex items-center gap-2">
-          <Image src={logo} alt="FITLOG" width={30} height={30} />
-          <span className="text-lg font-bold ml-1 text-white font-oswald">FITLOG</span>
+          <Image className="" src={logo} alt="FITLOG" width={25} height={25}/>
+          <span className="text-lg font-bold ml-1 text-white font-oswald hidden md:block lg:block">FITLOG</span>
         </Link>
       </div>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
         </ul>
       </div>
 
-      <div className="flex-1 flex justify-end items-center gap-6">
+      <div className="flex-1 flex justify-end items-center gap-3 lg:gap-4">
         <Link href={'/my-plan'} className="flex items-center gap-2 font-inter">
           <span className="text-xs font-medium text-gray-400">Plan</span>
           <span className="w-5 h-5 flex items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black text-xs">

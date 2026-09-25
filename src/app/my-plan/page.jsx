@@ -25,13 +25,13 @@ const MyPlanPage = () => {
   const sortedList = useMemo(() => {
     const sorted = [...activeList];
     if (sortBy === "Duration") {
-      sorted.sort((a, b) => (Number(a.duration)) - (Number(b.duration)));
+      sorted.sort((a, b) => (Number(b.duration)) - (Number(a.duration)));
     } else if (sortBy === "Name") {
-      sorted.sort((a, b) => (a.name).localeCompare(b.name));
+      sorted.sort((a, b) => (b.name).localeCompare(a.name));
     } else if (sortBy === "Calories") {
-      sorted.sort((a, b) => (Number(a.caloriesBurned)) - (Number(b.caloriesBurned)));
+      sorted.sort((a, b) => (Number(b.caloriesBurned)) - (Number(a.caloriesBurned)));
     } else if (sortBy === "Rating") {
-      sorted.sort((a, b) => (Number(a.rating)) - (Number(b.rating)));
+      sorted.sort((a, b) => (Number(b.rating)) - (Number(a.rating)));
     }
     return sorted;
   }, [activeList, sortBy]);
@@ -126,7 +126,7 @@ const MyPlanPage = () => {
               ))}
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <p className="text-white w-20 text-xs">Sort By</p>
+              <p className="text-white w-20 text-xs hidden md:block lg:block">Sort By</p>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}

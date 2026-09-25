@@ -41,7 +41,7 @@ const Hero = () => {
               alt="figure training on a gym machine"
               width={340}
               height={340}
-              className="w-full max-w-[320px]"
+              className="w-full max-w-[320px] hidden md:block lg:block"
             />
           </div>
         </div>

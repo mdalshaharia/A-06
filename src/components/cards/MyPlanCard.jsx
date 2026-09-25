@@ -7,7 +7,7 @@ const MyPlanCard = ({ currentPlan, onMarkAsDone, onDismiss }) => {
   const { image, name, equipment, caloriesBurned, duration, rating, id } = currentPlan;
 
   return (
-    <div className="flex items-center gap-4 w-full bg-[#0e1116] border border-white/10 rounded-2xl p-3 pr-5">
+    <div className="flex flex-col md:flex-row lg:flex-row items-center gap-4 w-full bg-[#0e1116] border border-white/10 rounded-2xl p-3 pr-5">
       <div className="relative w-30 h-20 rounded-xl overflow-hidden shrink-0">
         <Image src={image} alt={name} fill className="object-cover" />
       </div>
@@ -36,14 +36,14 @@ const MyPlanCard = ({ currentPlan, onMarkAsDone, onDismiss }) => {
       <div className="flex items-center gap-3">
           <Link
 href={`http://localhost:3000/details/${id}`}            
-            className="rounded-full border border-white/15 px-5 py-2 text-sm text-white hover:bg-white/5 transition-colors"
+            className="rounded-full border border-white/15 px-2.5 py-1.5 lg:px-5 lg:py-2 text-sm text-white hover:bg-white/5 transition-colors"
           >
             View Details
           </Link>
 
           <button
             onClick={onMarkAsDone}
-            className="inline-flex items-center gap-1.5 rounded-full bg-lime-400 hover:bg-lime-300 px-5 py-2 text-sm font-bold text-black"
+            className="inline-flex items-center gap-1.5 rounded-full bg-lime-400 hover:bg-lime-300 px-2.5 py-1.5 lg:px-5 lg:py-2 text-sm font-bold text-black"
           >
             <Check size={14} strokeWidth={3} />
             Mark as Done
