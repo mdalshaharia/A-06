@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FitLog
 
-## Getting Started
+FitLog is a sleek gym companion app that helps users browse workouts, view detailed exercise instructions, and build and track their daily training plans.
 
-First, run the development server:
+## 🛠️ Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Next.js** — App Router
+* **React-Tostify** - attractive alert
+* **Tailwind CSS**
+* **DaisyUI** — UI components
+* **Lucide React** — Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 1. Workout Library
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Browse a diverse collection of exercises covering major muscle groups. Workout data is fetched directly from an API.
 
-## Learn More
+### 2. Detailed Exercise Instructions
 
-To learn more about Next.js, take a look at the following resources:
+View detailed information for each exercise, including:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Difficulty level
+* Required equipment
+* Sets and reps
+* Step-by-step instructions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Daily Planner & Saved List
 
-## Deploy on Vercel
+* Add exercises to **Today's Plan**
+* Save/bookmark exercises for future workouts
+* Easily manage planned and saved exercises
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Dynamic Stat Tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Automatically calculates:
+
+* Total exercises
+* Estimated workout duration
+* Total calories burned
+
+### 5. Smart Sorting
+
+Organize your workouts by:
+
+* **Duration**
+* **Rating**
+* **Calories burned**

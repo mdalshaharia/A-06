@@ -5,8 +5,7 @@ import logo from './../../assests/logo.png'
 
 const Footer = () => {
     return (
-     <div className="flex border-t px-6 py-5 my-10 text-white container mx-auto ">
-      {/* Logo */}
+     <div className="flex border-t border-gray-700 px-6 py-5 mt-10 text-white container mx-auto ">
       <div className="flex-1">
         <Link href="/" className="flex items-center gap-2">
           <Image src={logo} alt="FITLOG" width={30} height={30} />

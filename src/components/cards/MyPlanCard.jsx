@@ -8,12 +8,10 @@ const MyPlanCard = ({ currentPlan, onMarkAsDone, onDismiss }) => {
 
   return (
     <div className="flex items-center gap-4 w-full bg-[#0e1116] border border-white/10 rounded-2xl p-3 pr-5">
-      {/* Thumbnail */}
-      <div className="relative w-30 h-20 rounded-xl overflow-hidden flex-shrink-0">
+      <div className="relative w-30 h-20 rounded-xl overflow-hidden shrink-0">
         <Image src={image} alt={name} fill className="object-cover" />
       </div>
 
-      {/* Info */}
       <div className="flex-1 min-w-0">
         <h3 className="font-extrabold uppercase text-sm tracking-tight text-white">
           {name}
@@ -35,8 +33,6 @@ const MyPlanCard = ({ currentPlan, onMarkAsDone, onDismiss }) => {
           </div>
         </div>
       </div>
-
-      {/* Actions */}
       <div className="flex items-center gap-3">
           <Link
 href={`http://localhost:3000/details/${id}`}            
@@ -47,7 +43,7 @@ href={`http://localhost:3000/details/${id}`}
 
           <button
             onClick={onMarkAsDone}
-            className="inline-flex items-center gap-1.5 rounded-full bg-lime-400 hover:bg-lime-300 px-5 py-2 text-sm font-bold text-black transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full bg-lime-400 hover:bg-lime-300 px-5 py-2 text-sm font-bold text-black"
           >
             <Check size={14} strokeWidth={3} />
             Mark as Done
@@ -56,8 +52,7 @@ href={`http://localhost:3000/details/${id}`}
     
           <button
             onClick={onDismiss}
-            aria-label="Dismiss"
-            className="text-neutral-500 hover:text-white transition-colors"
+            className="text-neutral-500 hover:text-white"
           >
             <X size={18} />
           </button>
