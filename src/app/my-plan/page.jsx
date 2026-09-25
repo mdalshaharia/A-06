@@ -1,8 +1,7 @@
 "use client";
 
 import Navbar from '@/components/navbar/Navbar';
-import React, { useContext, useMemo } from 'react';
-import { useState } from "react";
+import React, { useContext, useMemo, useEffect, useState } from 'react';
 import { WorkOutContext } from '@/context/WorkOutContext';
 import MyPlanCard from '@/components/cards/MyPlanCard';
 import EmptyCard from '@/components/cards/EmptyCard';
@@ -12,6 +11,11 @@ const tabs = ["Today's Plan", "Saved"];
 const MyPlanPage = () => {
     const [activeTab, setActiveTab] = useState("Today's Plan");
     const [sortBy, setSortBy] = useState("Duration");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
     const { saved, setSaved, plan, setPlan } = useContext(WorkOutContext);
 
@@ -25,6 +29,8 @@ const MyPlanPage = () => {
             sorted.sort((a, b) => (a.name).localeCompare(b.name));
         } else if (sortBy === "Calories") {
             sorted.sort((a, b) => (Number(a.caloriesBurned)) - (Number(b.caloriesBurned)));
+         } else if (sortBy === "Rating") {
+            sorted.sort((a, b) => (Number(a.rating)) - (Number(b.rating)));
         }
         return sorted;
     }, [activeList, sortBy]);
@@ -78,7 +84,7 @@ const MyPlanPage = () => {
                 <p
                   className={
                     stat.color
-                      ? "mt-1 text-3xl text-pink-700"
+                      ? "mt-1 text-3xl text-[#CCFF00]"
                       : "mt-1 text-3xl "
                   }
                 >
@@ -104,8 +110,6 @@ const MyPlanPage = () => {
                 </button>
               ))}
             </div>
-
-            {/* Sort select */}
             <div className="flex items-center gap-2 text-sm">
               <p className="text-white w-20 text-xs">Sort By</p>
               <select
@@ -116,11 +120,16 @@ const MyPlanPage = () => {
                 <option value="Duration">Duration</option>
                 <option value="Name">Name</option>
                 <option value="Calories">Calories</option>
+                <option value="Rating">Rating</option>
               </select>
             </div>
           </div>
           <div className=" mt-4 rounded-2xl min-h-70">
-            {sortedList.length > 0 ? (
+            {loading ? (
+              <div className="flex justify-center items-center h-40 text-neutral-400">
+                Loading...
+              </div>
+            ) : sortedList.length > 0 ? (
               <ul className="w-full  flex flex-col gap-3 items-center justify-center">
                 {sortedList.map((item, idx) => (
                   <MyPlanCard key={idx} currentPlan={item} onDismiss={() => handleDismiss(item)} />

@@ -11,17 +11,20 @@ const SaveBtn = ({currentPlan}) => {
        const { saved, setSaved } = useContext(WorkOutContext);
     
         const handleSetSaved = () => {
-            console.log('clicked')
-            const newSavedArr = [...saved , currentPlan];
+            const alreadyAdded = saved.find((s) => s.name === currentPlan.name);
+            if (alreadyAdded) {
+                toast.warn(`This plan is already saved!`);
+                return;
+            }
+            const newSavedArr = [...saved, currentPlan];
             setSaved(newSavedArr);
-        toast.success(`You have saved "${currentPlan.name}"`);
-         localStorage.setItem('workout_saved', JSON.stringify(newSavedArr));
-        // alert('success')
+            toast.success(`Saved for later!`);
+            localStorage.setItem('workout_saved', JSON.stringify(newSavedArr));
         }
 
 
     return (
-       <button onClick={() => handleSetSaved()} className="inline-flex items-center gap-2 border border-white/15 hover:bg-white/5 text-white text-sm rounded-lg px-4 py-2.5">
+       <button onClick={() => handleSetSaved()} className="inline-flex items-center gap-2 border border-gray-600 text-white text-sm rounded-lg px-4 py-2">
               <Bookmark size={16} />
               Save for later
             </button>

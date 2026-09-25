@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const WorkOutContext = createContext({
   plan: [],
@@ -10,6 +10,7 @@ export const WorkOutContext = createContext({
 });
 
 const WorkOutProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true);
   const [plan, setPlan] = useState(() => {
     try {
       const stored = localStorage.getItem('workout_plan');
