@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Dumbbell } from "lucide-react";
 import Image from "next/image";
 import logo from '../../assests/logo.png'
 import { useContext } from "react";
@@ -36,9 +35,9 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={
-                    ` text-xs px-3 py-1 font-inter ${isActive
-                      ? " rounded-full bg-[#27341b] text-[#C2F800] border border-gray-600 "
-                      : " rounded-full  text-gray-400"}`
+                    ` text-xs px-3 py-1 font-inter rounded-full ${isActive
+                      ? "  bg-[#27341b] text-[#C2F800] border border-gray-600 "
+                      : "   text-gray-400"}`
                   }
                 >
                   {link.label}
@@ -50,20 +49,20 @@ export default function Navbar() {
       </div>
 
       <div className="flex-1 flex justify-end items-center gap-6">
-        <div className="flex items-center gap-2 font-inter">
+        <Link href={'/my-plan'} className="flex items-center gap-2 font-inter">
           <span className="text-xs font-medium text-gray-400">Plan</span>
           <span className="w-5 h-5 flex items-center justify-center rounded-full bg-[#C2F800] font-semibold text-black text-xs">
             {plan ? plan.length : 0}
           </span>
-        </div>
-        <div className="flex items-center gap-2">
+        </Link>
+        <Link href={'/my-plan'} className="flex items-center gap-2">
           <span className="text-xs font-medium text-gray-400">Saved</span>
           <span className="w-5 h-5 flex items-center justify-center rounded-full text-xs font-semibold border border-gray-500">
             {
                 saved? saved.length : 0
             }
           </span>
-        </div>
+        </Link>
       </div>
     </div>
     </section>

@@ -20,7 +20,7 @@ const Library = async() => {
     // console.log(cardData)
 
     return (
-        <div className="container mx-auto">
+        <div id="library" className="container mx-auto">
             <div className="mx-10">
                 <h1 className="text-white text-3xl font-bold font-oswald">THE LIBRARY</h1>
             <p className="text-gray-400 text-sm mt-1 font-inter">Twelve lifts covering every major muscle group.</p>
