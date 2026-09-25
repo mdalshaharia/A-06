@@ -24,7 +24,7 @@ const Library = async() => {
             <div className="mx-10">
                 <h1 className="text-white text-3xl font-bold font-oswald">THE LIBRARY</h1>
             <p className="text-gray-400 text-sm mt-1 font-inter">Twelve lifts covering every major muscle group.</p>
-            <div className='grid grid-cols-3 gap-3 mt-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-5 mt-5'>
                 {
                     cardData.map((data, idx) => <LibraryCard key={idx} data={data} ></LibraryCard>)
                 }

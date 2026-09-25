@@ -1,12 +1,13 @@
-import { Clock, Star, ThumbsUp } from 'lucide-react';
+import { ChartPie, Clock, Star } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const LibraryCard = ({data}) => {
-   const {image, muscleGroups, name , reps, rating, caloriesBurned, equipment, duration} = data;
+   const {image, muscleGroups, name , reps, rating, caloriesBurned, equipment, duration, id} = data;
     // console.log(data)
     return (
-        <div className="card w-full max-w-md text-white border border-white/10 rounded-2xl">
+        <Link href={`/details/${id}`}  className="card w-full max-w-md text-white border border-white/10 rounded-2xl">
       <figure className="relative h-52 w-full">
         <Image src={image} alt={name} fill className="object-cover" />
       </figure>
@@ -31,14 +32,14 @@ const LibraryCard = ({data}) => {
  
         <div className="border-t border-white/10 my-1" />
 
-        <div className="flex items-center gap-5 text-sm text-neutral-400">
+        <div className="flex items-center gap-5 text-sm text-neutral-400 font-inter">
           <div className="flex items-center gap-1.5">
             <Clock size={16} />
-            <span>{duration}</span>
+            <span>{duration} min</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <ThumbsUp size={16} fill="currentColor" />
-            <span>{caloriesBurned}</span>
+            <ChartPie size={15} fill="currentColor"/>
+            <span>{caloriesBurned} Kcal</span>
           </div>
           <div className="ml-auto flex items-center gap-1.5">
             <Star size={16} />
@@ -46,7 +47,7 @@ const LibraryCard = ({data}) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
     );
 };
 
