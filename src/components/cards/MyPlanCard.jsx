@@ -37,7 +37,7 @@ const MyPlanCard = ({ currentPlan, onMarkAsDone, onDismiss }) => {
       </div>
       <div className="flex items-center gap-3">
         <Link
-          href={`http://localhost:3000/details/${id}`}
+          href={`https://a-06.vercel.app/details/${id}`}
           className="rounded-full border border-white/15 px-2.5 py-1.5 lg:px-5 lg:py-2 text-sm text-white hover:bg-white/5 transition-colors"
         >
           View Details

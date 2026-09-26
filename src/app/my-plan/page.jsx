@@ -36,7 +36,7 @@ const MyPlanPage = () => {
     }
     return sorted;
   }, [activeList, sortBy]);
-  console.log(sortedList)
+  // console.log(sortedList)
 
   const handleDismiss = (item) => {
     if (activeTab === "Today's Plan") {
