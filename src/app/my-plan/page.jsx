@@ -6,6 +6,7 @@ import { WorkOutContext } from '@/context/WorkOutContext';
 import MyPlanCard from '@/components/cards/MyPlanCard';
 import EmptyCard from '@/components/cards/EmptyCard';
 import { toast } from 'react-toastify';
+import Footer from '@/components/footer/Footer';
 
 const tabs = ["Today's Plan", "Saved"];
 
@@ -157,6 +158,7 @@ const MyPlanPage = () => {
 
         </div>
       </section>
+      <Footer></Footer>
     </div>
   );
 };
